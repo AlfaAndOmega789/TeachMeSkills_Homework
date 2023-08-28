@@ -5,12 +5,12 @@ import static java.lang.Character.getNumericValue;
 
 public class Test {
     public static void main(String[] args) {
-        System.out.println(firstTask(7.7,7.0)); //первая задача
-        System.out.println(secondTask(25)); // вторая задача
-        System.out.println(thirdTask(128)); //третья задача
-        System.out.println(fourthTask(5.5424234234234141)); //четвертая задача
-        System.out.println(fifthTask(21, 8)); //пятая задача
-        System.out.println(sixthTask(1, 2)); //шестая задача
+        System.out.println(firstTask(7.7,7.0)); //task 1
+        System.out.println(secondTask(25)); // task 2
+        System.out.println(thirdTask(128)); //task 3
+        System.out.println(fourthTask(5.5424234234234141)); //task 4
+        System.out.println(fifthTask(21, 8)); //task 5
+        System.out.println(sixthTask(1, 2)); //task 6
     }
 
     public static double firstTask(double b, double c){
