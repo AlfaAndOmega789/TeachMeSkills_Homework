@@ -20,6 +20,8 @@ public class Test {
         System.out.println("Результат вычитания: " + seventhTaskSubtraction(sc.nextInt(), sc.nextInt())); // task 7.2
         System.out.println("Результат умножения: " + seventhTaskMultiplication(sc.nextInt(), sc.nextInt())); //task 7.3
         System.out.println("Результат деления: " + seventhTaskDivision(sc.nextInt(), sc.nextInt())); //task 7.4
+
+        System.out.println(eighthTask(2, 4.0, 6.0)); //task 8
     }
 
     public static double firstTask(double b, double c){
