@@ -69,10 +69,26 @@ public class Test {
     public static double seventhTaskMultiplication(double a, double b){
         return a * b;
     }
-
     public static double seventhTaskDivision(double a, double b){
         return (double)a / b + (double) a % b;
     }
+
+    public static double eighthTask(int c, double a, double b){
+        switch (c){
+            case 1:
+                 return seventhTaskAddition(a, b);
+            case 2:
+                return seventhTaskSubtraction(a, b);
+            case 3:
+                 return seventhTaskMultiplication(a, b);
+            case 4:
+                return seventhTaskDivision(a, b);
+
+        }
+        return 0;
+    }
+
+
 
 
 }
