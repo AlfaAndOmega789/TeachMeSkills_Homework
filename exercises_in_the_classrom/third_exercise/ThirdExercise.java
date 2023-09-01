@@ -10,6 +10,7 @@ public class ThirdExercise {
         numbersFirst(); //task 2
         numberSecond(); // task 3
         System.out.println(compoundPercent(sc.nextDouble(),  sc.nextInt())); // task 4
+        twoNumber(); // task 5
 
 //        int[] num = {4,2,4,3,1,6,7};
 //        twoMaxNumbers(num);
@@ -82,6 +83,25 @@ public class ThirdExercise {
         }
 
         return newSum;
+    }
+
+    public static double twoNumber(){
+        Scanner sc = new Scanner(System.in);
+        double someSum = 0;
+        int c;
+
+        do{
+            int firstNumber = sc.nextInt();
+            int secondNumber = sc.nextInt();
+            someSum = firstNumber * secondNumber;
+            System.out.println(someSum);
+            System.out.println("Завершить работу?");
+            c = sc.nextInt();
+            if(c == 1)
+                break;
+        }while(true);
+
+        return someSum;
     }
 
 //    public static void twoMaxNumbers(int[] number){

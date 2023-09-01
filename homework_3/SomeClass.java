@@ -11,8 +11,7 @@ public class SomeClass {
         temperature(sc.nextInt()); //task 2
         squareNumber(); //task 3
         subsequence(); //task 4
-        twoNumber(); // task 5
-        someMethod(10); //task 6
+        someMethod(10); //task 5
     }
 
     public static void evenNumber (int number){
@@ -44,28 +43,6 @@ public class SomeClass {
         }
         System.out.println();
     }
-
-    public static double twoNumber(){
-        Scanner sc = new Scanner(System.in);
-        double someSum = 0;
-        int a = 1;
-        int b = 2;
-        int c;
-
-        do{
-            int firstNumber = sc.nextInt();
-            int secondNumber = sc.nextInt();
-            someSum = firstNumber * secondNumber;
-            System.out.println(someSum);
-            System.out.println("Завершить работу?");
-            c = sc.nextInt();
-            if(c == 1)
-                break;
-        }while(true);
-
-        return someSum;
-    }
-
     public static void someMethod(int number) {
         int sum = 0;
 
