@@ -5,15 +5,16 @@ import java.util.Scanner;
 public class ThirdExercise {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        int number[] = {4,1,1,2,7,8,10,2};
 
         month(sc.nextInt()); //task 1
         numbersFirst(); //task 2
         numberSecond(); // task 3
-        System.out.println(compoundPercent(sc.nextDouble(),  sc.nextInt())); // task 4
-        twoNumber(); // task 5
-
-//        int[] num = {4,2,4,3,1,6,7};
-//        twoMaxNumbers(num);
+        twoMaxNumbers(number);//task 4
+        System.out.println(compoundPercent(sc.nextDouble(),  sc.nextInt())); // task 5
+        twoNumber(); // task 6
+        naturalNumberTest(sc.nextInt()); //task 7
+        outputMultiplicationTable(sc.nextInt(), sc.nextInt());//task 8
     }
 
     public static void month(int month){
@@ -74,7 +75,7 @@ public class ThirdExercise {
         }
     }
 
-    public static double compoundPercent(double sum, int month){
+    public static String compoundPercent(double sum, int month){
         double newSum = 0;
         newSum = sum  * 1.07;
 
@@ -82,7 +83,7 @@ public class ThirdExercise {
             newSum = newSum * 1.07;
         }
 
-        return newSum;
+        return Double.toString(newSum);
     }
 
     public static double twoNumber(){
@@ -104,30 +105,40 @@ public class ThirdExercise {
         return someSum;
     }
 
-//    public static void twoMaxNumbers(int[] number){
-//
-//        int firstNumber = number[0];
-//        int secondNumber = number[1];
-//
-//        for (int i = 1; i < number.length; i++) {
-//            if(firstNumber < number[i]) {
-//                firstNumber = secondNumber;
-//                if (secondNumber < firstNumber && secondNumber < number[i] ){ //доделать
-//                    secondNumber = number[i];
-//                }
-//            }
-//        }
-//        System.out.println(secondNumber + " , " + firstNumber);
-//    }
+    public static void twoMaxNumbers(int[] number){
 
-//    public static void star(int a){
-//        for(int i = 0; i < a;i++){
-//            for(int j = 0; j < i + 1;j++){
-//                System.out.print("*");
-//            }
-//            System.out.println();
-//        }
-//    }
+        int firstNumber = Integer.MIN_VALUE;
+        int secondNumber = Integer.MIN_VALUE;
 
+        for (int i = 1; i < number.length - 1; i++) {
+
+            if(firstNumber < number[i + 1]){
+                firstNumber = number[i + 1];
+
+                if (secondNumber < firstNumber && secondNumber < number[i]){
+                    secondNumber = number[i];
+                }
+            }
+        }
+        System.out.println(firstNumber + " , " + secondNumber);
+    }
+
+    public static void naturalNumberTest(int number){
+        for (int i = 2; i <= Math.sqrt(number); i++) {
+            if(number % 2 == 0){
+                System.out.println("Число не является простым");
+                break;
+            }
+        }
+    }
+
+    public static void outputMultiplicationTable(int firstNumber, int secondNumber){
+        for (int i = 1; i <= firstNumber; i++){
+            for(int j = 1; j <= secondNumber; j++){
+                System.out.print(i * j + " ");
+            }
+            System.out.println();
+        }
+    }
 
 }
