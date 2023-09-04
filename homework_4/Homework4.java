@@ -112,8 +112,8 @@ public class Homework4 {
             stroka = stroka + number[i];
         }
 
-        Integer value = Integer.valueOf(stroka) + 1;
-        String newStroka = Integer.toString(value);
+        Long value = Long.valueOf(stroka) + 1;
+        String newStroka = Long.toString(value);
         char symbol [] = newStroka.toCharArray();
 
         System.out.println(Arrays.toString(symbol));
