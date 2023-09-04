@@ -140,6 +140,15 @@ public class FourthExercise {
             multiplicationResult[i] = numbers1[i] * numbers2[i];
             System.out.print(multiplicationResult[i] + " ");
         }
+
+        for(int i = 0 ; i < multiplicationResult.length; i++){
+            for(int j = 1 ; j < multiplicationResult.length;j++){
+                if(multiplicationResult[i] == multiplicationResult[j]){
+
+                }
+            }
+        }
+
     }
 
     public static void flipArray(){
