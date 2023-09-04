@@ -46,7 +46,7 @@ public class SomeClass {
     public static void someMethod(int number) {
         int sum = 0;
 
-        if (number != 0 && number <= 1) {
+        if (number >= 1) {
             for (int i = 1; i < number; i++)
                 sum = sum + i;
             System.out.println("Cумма составляет: " + sum);
