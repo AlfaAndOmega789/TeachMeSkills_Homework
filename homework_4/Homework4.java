@@ -1,11 +1,26 @@
 package homework_4;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Homework4 {
     public static void main(String[] args) {
-        int numbers[] = { 10, 12, 3, 0, 5, 107, 200, 115, 3, 64, 0, 0};
-        int numbers2[] = { 1, 4, 0, 5, 6, 3};
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Задайте размер массива(натуральное, целое число): " );
+        int someValue = sc.nextInt();
+        int numbers[] = new int[someValue];
+
+        for(int i = 0 ; i < someValue; i++){
+            numbers[i] = (int)(Math.random() * 100);
+            System.out.print(numbers[i] + " ");
+        }
+
+//        for(int i = 0; i < numbers.length; i++){ // цикл для заполнения массива вручную
+//            numbers[i] = sc.nextInt();
+//        }
+
+
 
         directAndReverseArrayOutput(numbers); //task 1
         minAndMaxValue(numbers); //task 2
@@ -13,7 +28,7 @@ public class Homework4 {
         numberOfZeroElements(numbers); //task 4
         substitutionMethod(numbers); // task 5
         checkOfIncrease(numbers); //task 6
-        addingOneToANumberFromAnArray(numbers2); //task 7
+        addingOneToANumberFromAnArray(numbers); //task 7
     }
 
 
