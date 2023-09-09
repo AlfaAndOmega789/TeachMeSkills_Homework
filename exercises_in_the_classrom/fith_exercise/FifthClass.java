@@ -1,7 +1,5 @@
-package exercises_in_the_classrom.fith_exerccise;
+package exercises_in_the_classrom.fith_exercise;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
