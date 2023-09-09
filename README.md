@@ -16,6 +16,7 @@
 B(Black) или W(White). При выводе результат работы программы должен быть
 teachmeskills.by
 следующим:
+
 W B W B W B W B
 
 B W B W B W B W
