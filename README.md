@@ -18,6 +18,7 @@ teachmeskills.by
 следующим:
 
 W B W B W B W B
+
 B W B W B W B W
 
 W B W B W B W B
