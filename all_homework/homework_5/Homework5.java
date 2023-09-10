@@ -1,5 +1,6 @@
 package all_homework.homework_5;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Homework5 {
@@ -15,6 +16,7 @@ public class Homework5 {
 //            }
 //            System.out.println();
 //        }
+        snake(sc.nextInt(), sc.nextInt()); //task 3
 
     }
 
@@ -53,7 +55,7 @@ public class Homework5 {
         return sum;
     }
 
-    public static String[][] chess(){
+    public static String[][] chess(){ //tsk 2
         String [][] array = new String[8][8];
 
         for(int i = 0 ; i < array.length; i++){
@@ -66,5 +68,20 @@ public class Homework5 {
             }
         }
         return array;
+    }
+
+    public static void snake(int n, int m){ //task 3
+
+        int[][] arr = new int[n][m];
+
+        for(int i = 0; i < n*m; i++) {
+            int h = i / m;
+            int j = h % 2 == 0 ? i % m : m - 1 - i % m;
+            arr[i][j] = n;
+        }
+
+        System.out.println(Arrays.deepToString(arr));
+
+
     }
 }
