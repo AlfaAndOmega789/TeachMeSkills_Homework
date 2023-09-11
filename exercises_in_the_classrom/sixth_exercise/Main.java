@@ -9,6 +9,5 @@ public class Main {
         calculator.multiplication(45, 13);
         System.out.println(calculator.weight + " " + calculator.coast + " " + calculator.color);
         System.out.println(calculator.toString());
-
     }
 }

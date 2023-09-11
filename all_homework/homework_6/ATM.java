@@ -29,17 +29,17 @@ public class ATM { //task 2
     public boolean removeCashToTheATM(long sum){
         if(sum % 20 == 0){
             count20 -= sum / 20;
-            System.out.println(sum / 20 + " - купюр выдано клиент, номиналом 20$");
+            System.out.println(sum / 20 + " - купюр выдано клиенту, номиналом 20$");
             return true;
         }
         else if(sum % 50 == 0){
             count50 -= sum / 50;
-            System.out.println(sum / 50 + " - купюр выдано клиент, номиналом 50$");
+            System.out.println(sum / 50 + " - купюр выдано клиенту, номиналом 50$");
             return true;
         }
         else if(sum % 100 == 0){
             count100 -= sum / 100;
-            System.out.println(sum / 100 + " - купюр выдано клиент, номиналом 100$");
+            System.out.println(sum / 100 + " - купюр выдано клиенту, номиналом 100$");
             return true;
         }
         return false;
