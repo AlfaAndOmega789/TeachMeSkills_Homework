@@ -1,6 +1,6 @@
 package all_homework.homework_6;
 
-public class CreditCard {
+public class CreditCard { //task 1
     public long billingNumber;
     public long totalSum;
 
