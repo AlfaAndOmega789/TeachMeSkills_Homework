@@ -56,7 +56,7 @@ public class FifthClass {
 
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array.length; j++) {
-                array[i][j] = random.nextInt(0, 100);
+                array[i][j] = random.nextInt();
 
                 if (i == j) {
                     sum += array[i][j];
