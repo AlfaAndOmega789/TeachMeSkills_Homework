@@ -8,10 +8,11 @@ public class Therapist extends Doctor {
     Therapist therapist = new Therapist();
 
     public static void main(String[] args) {
-        Patient patient = new Patient(1);
+        Patient patient = new Patient();
         Therapist therapist = new Therapist();
+        therapist.appointDoctorAccordingToTheTreatmentPlan(patient.getTreatmentPlan());
 
-        therapist.appointDoctorAccordingToTheTreatmentPlan(patient.treatmentPlan);
+
     }
     @Override
     public  void treat(){
