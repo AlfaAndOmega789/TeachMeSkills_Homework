@@ -45,18 +45,18 @@ public class WorkingWithStrings {
         String someString = "";
 
         for(int i = 0; i < strings.length; i++){
-            for(int j = 1; j < strings.length - 1; j++){
-                if(strings[i].length() > strings[i + 1].length()){
+
+                if(strings[i].length() > strings[i].length()){
                     someString = strings[i];
-                    strings[i] = strings[i + 1];
-                    strings[i + 1] = someString;
+                    strings[i] = strings[i  + 1];
+                    strings[i] = someString;
                 }
             }
         }
 
-        for (int i = strings.length -1; 0 <= i; i--) {
-            System.out.print(strings[i] + "," + strings[i].length() + "; ");
-        }
+//        for (int i = strings.length -1; 0 <= i; i--) {
+//            System.out.print(strings[i] + "," + strings[i].length() + "; ");
+//        }
     }
 
 }
