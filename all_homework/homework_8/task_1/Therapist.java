@@ -3,9 +3,7 @@ package all_homework.homework_8.task_1;
 
 
 public class Therapist extends Doctor {
-    Surgeon surgeon = new Surgeon();
-    Dentist dentist = new Dentist();
-    Therapist therapist = new Therapist();
+
 
     public static void main(String[] args) {
         Patient patient = new Patient();
@@ -20,6 +18,10 @@ public class Therapist extends Doctor {
     }
 
     public void appointDoctorAccordingToTheTreatmentPlan(int a){
+        Surgeon surgeon = new Surgeon();
+        Dentist dentist = new Dentist();
+        Therapist therapist = new Therapist();
+
             if(a == 1) {
                 System.out.println("The patient has been assigned a surgeon");
                 surgeon.treat();

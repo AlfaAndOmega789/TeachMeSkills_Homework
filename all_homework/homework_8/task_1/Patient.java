@@ -1,7 +1,7 @@
 package all_homework.homework_8.task_1;
 
 public class Patient {
-    private int treatmentPlan;
+    private int treatmentPlan  = 1;
 
     public int getTreatmentPlan(){
         return treatmentPlan;
