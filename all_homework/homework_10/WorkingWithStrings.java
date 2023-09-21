@@ -19,7 +19,8 @@ public class WorkingWithStrings {
         }
 
         longestAndShortestString(strings); //task 1
-        orderingString(strings1); //tsk 2
+        orderingString(strings1); //task 2
+        averageLength(strings1); //task 3
 
     }
 
@@ -44,19 +45,57 @@ public class WorkingWithStrings {
     public static void orderingString(String[] strings){ //task 2
         String someString = "";
 
-        for(int i = 0; i < strings.length; i++){
+        for(int i = 0; i < strings.length - 1; i++){
 
-                if(strings[i].length() > strings[i].length()){
+                if(strings[i].length() > strings[i + 1].length()){
                     someString = strings[i];
                     strings[i] = strings[i  + 1];
-                    strings[i] = someString;
+                    strings[i + 1] = someString;
                 }
             }
+        for (int i = 0; i < strings.length; i++) {
+            System.out.print(strings[i] + " ");
         }
+        System.out.println();
+     }
 
-//        for (int i = strings.length -1; 0 <= i; i--) {
-//            System.out.print(strings[i] + "," + strings[i].length() + "; ");
+     public static void averageLength(String[] strings){ // task 3
+         String someString = "";
+
+         for(int i = 0; i < strings.length - 1; i++){
+
+             if(strings[i].length() > strings[i + 1].length()){
+                 someString = strings[i];
+                 strings[i] = strings[i  + 1];
+                 strings[i + 1] = someString;
+             }
+         }
+
+         double average = (strings[0].length() + strings[1].length() + strings[2].length()) / 3 + (strings[0].length() + strings[1].length() + strings[2].length()) % 3 ;
+            
+         for(int i = 0; i < strings.length;i++){
+             if(average > strings[i].length()){
+                 System.out.println(strings[i] + "  " + strings[i].length());
+             }
+         }
+         System.out.println();
+
+//        int average = Integer.MIN_VALUE;
+//
+//        if(strings[0].length() >= strings[1].length() && strings[2].length() >= strings[0].length()  ){
+//            average = strings[0].length();
+//        } else if(strings[1].length() >= strings[0].length() && strings[0].length() >= strings[2].length()  ){
+//             average = strings[0].length();
+//        } else if(strings[2].length() >= strings[1].length() && strings[1].length() >= strings[0].length()  ){
+//            average = strings[1].length();
+//        }else if(strings[1].length() >= strings[2].length() && strings[0].length() >= strings[1].length()  ){
+//            average = strings[1].length();
+//        }else if(strings[1].length() >= strings[2].length() && strings[2].length() >= strings[0].length()  ){
+//            average = strings[2].length();
+//        }else if(strings[2].length() >= strings[1].length() && strings[0].length() >= strings[2].length()  ){
+//            average = strings[2].length();
 //        }
     }
 
 }
+
