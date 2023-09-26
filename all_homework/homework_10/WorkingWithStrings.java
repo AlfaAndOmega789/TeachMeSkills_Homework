@@ -23,7 +23,7 @@ public class WorkingWithStrings {
 //        longestAndShortestString(strings); //task 1
 //        orderingString(strings1); //task 2
 //        averageLength(strings1); //task 3
-        uniqueCharacterInAWorld(strings1);
+        uniqueCharacterInAWorld(strings1); //task 4
  //       System.out.println(dublicateSymbol(stroka));//task 5
 
 
@@ -85,7 +85,7 @@ public class WorkingWithStrings {
          }
          System.out.println();
     }
-    public static void uniqueCharacterInAWorld(String[] array){
+    public static void uniqueCharacterInAWorld(String[] array){ //task 4
         List<Character> firstWorld = new ArrayList<>();
         List<Character> secondWorld = new ArrayList<>();
         List<Character> thirdWorld = new ArrayList<>();
