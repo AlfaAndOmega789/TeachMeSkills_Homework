@@ -7,9 +7,9 @@ public class Main {
         Apple apple = new Apple("Red");
 
         Class<? extends Apple> appleClass = apple.getClass();
-        Field serialColorField = appleClass.getDeclaredField("Green");
-
-        String serialColorValue = (String) serialColorField.get(apple); // не понимать =(
-        System.out.println(serialColorField);
+//                Field serialColorField = appleClass.getDeclaredField("Green");
+//
+//        String serialColorValue = (String) serialColorField.get(apple); // не понимать =(
+//        System.out.println(serialColorField);
     }
 }

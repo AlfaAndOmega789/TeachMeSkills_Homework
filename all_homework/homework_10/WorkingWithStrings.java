@@ -5,22 +5,27 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
 
 public class WorkingWithStrings {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         ArrayList<String> strings = new ArrayList<>();
         String[] strings1 = new String[3];
+        String stroka = "Hello";
 
         for (int i = 0; i < 3; i++) {
             strings1[i] = reader.readLine();
             strings.add(strings1[i]);
-
         }
 
-        longestAndShortestString(strings); //task 1
-        orderingString(strings1); //task 2
-        averageLength(strings1); //task 3
+//        longestAndShortestString(strings); //task 1
+//        orderingString(strings1); //task 2
+//        averageLength(strings1); //task 3
+        uniqueCharacterInAWorld(strings1);
+ //       System.out.println(dublicateSymbol(stroka));//task 5
+
 
     }
 
@@ -79,22 +84,78 @@ public class WorkingWithStrings {
              }
          }
          System.out.println();
+    }
+    public static void uniqueCharacterInAWorld(String[] array){
+        List<Character> firstWorld = new ArrayList<>();
+        List<Character> secondWorld = new ArrayList<>();
+        List<Character> thirdWorld = new ArrayList<>();
+        char[] firstArray = array[0].toCharArray();
+        char[] secondArray = array[1].toCharArray();
+        char[] thirdArray = array[2].toCharArray();
 
-//        int average = Integer.MIN_VALUE;
-//
-//        if(strings[0].length() >= strings[1].length() && strings[2].length() >= strings[0].length()  ){
-//            average = strings[0].length();
-//        } else if(strings[1].length() >= strings[0].length() && strings[0].length() >= strings[2].length()  ){
-//             average = strings[0].length();
-//        } else if(strings[2].length() >= strings[1].length() && strings[1].length() >= strings[0].length()  ){
-//            average = strings[1].length();
-//        }else if(strings[1].length() >= strings[2].length() && strings[0].length() >= strings[1].length()  ){
-//            average = strings[1].length();
-//        }else if(strings[1].length() >= strings[2].length() && strings[2].length() >= strings[0].length()  ){
-//            average = strings[2].length();
-//        }else if(strings[2].length() >= strings[1].length() && strings[0].length() >= strings[2].length()  ){
-//            average = strings[2].length();
-//        }
+        for(int i = 0; i < firstArray.length; i++){
+            firstWorld.add(i, firstArray[i]);
+        }
+        for(int i = 0; i < secondArray.length; i++){
+            secondWorld.add(i, secondArray[i]);
+        }
+        for(int i = 0; i < thirdArray.length; i++){
+            thirdWorld.add(i, thirdArray[i]);
+        }
+
+        boolean someValue = true;
+
+        first:
+        if(someValue){
+            for(int i = 0; i < firstWorld.size();i++){
+                for(int j = i + 1; j < firstWorld.size();j++){
+                    if(firstWorld.get(i) == firstWorld.get(j)){
+                        System.out.println(array[0]);
+                        someValue = false;
+                        break first;
+                    }
+                }
+            }
+        }
+
+        second:
+        if(someValue){
+            for(int i = 0; i < secondWorld.size();i++){
+                for(int j = i + 1; j < secondWorld.size();j++){
+                    if(secondWorld.get(i).equals(secondWorld.get(j))) {
+                        System.out.println(array[0]);
+                        someValue = false;
+                        break second;
+                    }
+                }
+            }
+        }
+
+        third:
+        if(someValue){
+            for(int i = 0; i < thirdWorld.size();i++){
+                for(int j = i + 1; j < thirdWorld.size();j++){
+                    if(thirdWorld.get(i).equals(thirdWorld.get(j))) {
+                        System.out.println(array[2]);
+                        someValue = false;
+                        break third;
+                    }
+                }
+            }
+        }
+
+
+
+    }
+    public static String dublicateSymbol(String stroka){ //task 5
+        char[] array = stroka.toCharArray();
+        String newString = "";
+
+        for(int i = 0; i < array.length;i++){
+            newString += "" + array[i] + array[i];
+        }
+
+        return newString;
     }
 
 }
