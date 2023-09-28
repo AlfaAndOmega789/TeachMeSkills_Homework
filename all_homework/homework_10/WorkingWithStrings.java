@@ -76,7 +76,7 @@ public class WorkingWithStrings {
              }
          }
 
-         double average = (strings[0].length() + strings[1].length() + strings[2].length()) / 3 + (strings[0].length() + strings[1].length() + strings[2].length()) % 3 ;
+         double average = (strings[0].length() + strings[1].length() + strings[2].length()) / 3;
             
          for(int i = 0; i < strings.length;i++){
              if(average > strings[i].length()){
