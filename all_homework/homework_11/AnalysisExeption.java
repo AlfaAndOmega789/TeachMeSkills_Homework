@@ -4,7 +4,7 @@ public class AnalysisExeption {
     public static boolean threeParametrs(String login, String password, String confimPassword) {
         boolean result = true;
 
-        if (login.length() > 20 && login.indexOf(" ") != -1) {
+        if (login.length() > 20 || login.indexOf(" ") != -1) {
             new WrongLoginException("Login не соответствует заданному условию!");
             result = false;
         }
