@@ -63,33 +63,49 @@ public class Student {
         }
         System.out.println();
 
-        Student student = new Student();
-        student.studentExpelledOrTransferredToAnotherCourse(list);
-
-        for(Student st : list){
+        for(Student st : studentExpelledOrTransferredToAnotherCourse(list)){
             System.out.println(st.name);
         }
         System.out.println();
 
-        student.printStudents(list, 3);
+        printStudents(studentExpelledOrTransferredToAnotherCourse(list), 5);
 
     }
 
-    public void studentExpelledOrTransferredToAnotherCourse(List<Student> list){
-        for(int i = 0; i < list.size();i++){
-            if(3.0 > list.get(i).grade){
-                list.remove(i);
-            }else if(list.get(i).grade >= 3.0){
-                list.get(i).course++;
+    public static List<Student> studentExpelledOrTransferredToAnotherCourse(List<Student> list) {
+        List<Student> newList = new ArrayList<>();
+        for (Student student : list) {
+            if (student.getGrade() >= 3.0) {
+                student.setCourse(student.getCourse() + 1);
+                newList.add(student);
             }
         }
+        return newList;
     }
+//    public static List<Student> studentExpelledOrTransferredToAnotherCourse(List<Student> list){
+//        List<Student> newList = new ArrayList<>();
+//        for(int i = 0; i < list.size();i++){
+//            if(3.0 <= list.get(i).grade){
+//                newList.add(list.get(i));
+//            }
+//        }
+//
+//        for(Student st : newList){
+//            st.setCourse(st.getCourse() + 1);
+//        }
+//        return newList;
+//    }
 
-    public void printStudents(List<Student> list, int course){
-        for(int i = 0; i < list.size();i++){
-            if(list.get(i).course == course){
-                System.out.println(list.get(i).name + " " + list.get(i).course);
+    public static void printStudents(List<Student> list, int course){
+        for(Student st : list){
+            if(st.course == course){
+                System.out.println(st.name + " " + st.course);
             }
         }
+//        for(int i = 0; i < list.size();i++){
+//            if(list.get(i).getCourse() == course){ //изменено
+//                System.out.println(list.get(i).name + " " + list.get(i).course);
+//            }
+//        }
     }
 }
