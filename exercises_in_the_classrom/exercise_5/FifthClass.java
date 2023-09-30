@@ -1,4 +1,4 @@
-package exercises_in_the_classrom.fith_exercise;
+package exercises_in_the_classrom.exercise_5;
 
 import java.util.Random;
 import java.util.Scanner;

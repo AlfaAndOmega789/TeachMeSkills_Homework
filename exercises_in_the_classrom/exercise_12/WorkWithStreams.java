@@ -1,4 +1,4 @@
-package exercises_in_the_classrom.twelfth_exercise;
+package exercises_in_the_classrom.exercise_12;
 
 import java.io.*;
 

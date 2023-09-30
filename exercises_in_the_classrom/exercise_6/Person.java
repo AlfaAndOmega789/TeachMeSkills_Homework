@@ -1,4 +1,4 @@
-package exercises_in_the_classrom.sixth_exercise;
+package exercises_in_the_classrom.exercise_6;
 
 public class Person {
     String fullName = "Ivan";

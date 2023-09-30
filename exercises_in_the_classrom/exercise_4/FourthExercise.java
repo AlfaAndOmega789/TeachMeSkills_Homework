@@ -1,4 +1,4 @@
-package exercises_in_the_classrom.fourth_exercise;
+package exercises_in_the_classrom.exercise_4;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package exercises_in_the_classrom.ninth_exercise.task_1;
+package exercises_in_the_classrom.exercise_9.task_1;
 
 public class Triangle extends Shape{
     @Override

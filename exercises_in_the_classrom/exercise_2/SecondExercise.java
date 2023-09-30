@@ -1,4 +1,4 @@
-package exercises_in_the_classrom.second_exercise;
+package exercises_in_the_classrom.exercise_2;
 
 public class SecondExercise {
     public static void main(String[] args) {

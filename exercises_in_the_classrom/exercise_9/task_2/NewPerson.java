@@ -1,4 +1,4 @@
-package exercises_in_the_classrom.ninth_exercise.task_2;
+package exercises_in_the_classrom.exercise_9.task_2;
 
 public class NewPerson {
     public static void main(String[] args) {
