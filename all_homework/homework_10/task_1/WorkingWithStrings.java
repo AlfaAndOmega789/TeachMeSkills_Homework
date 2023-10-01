@@ -1,4 +1,4 @@
-package all_homework.homework_10;
+package all_homework.homework_10.task_1;
 
 import java.io.BufferedReader;
 import java.io.IOException;
