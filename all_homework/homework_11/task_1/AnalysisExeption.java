@@ -8,7 +8,6 @@ public class AnalysisExeption {
             new WrongLoginException("Login не соответствует заданному условию!");
             result = false;
         }
-
         if(password.length() > 20 || password.indexOf(" ") == -1 || password.equals(confimPassword) || checkNumberInTheString(password)){
             new WrongPasswordException("Password не соответствует заданному условию!");
             result = false;
@@ -28,5 +27,4 @@ public class AnalysisExeption {
         }
         return checkNumber;
     }
-
 }
