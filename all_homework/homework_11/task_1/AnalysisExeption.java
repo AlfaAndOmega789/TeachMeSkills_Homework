@@ -1,4 +1,4 @@
-package all_homework.homework_11;
+package all_homework.homework_11.task_1;
 
 public class AnalysisExeption {
     public static boolean threeParametrs(String login, String password, String confimPassword) {
