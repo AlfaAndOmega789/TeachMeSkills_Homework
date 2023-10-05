@@ -11,7 +11,7 @@ public class MainDeveloper {
         list.add(new Developer(2, "Anton"));
         list.add(new Developer(3, "Petya"));
 
-        Stream stream = list.stream();
-
+        list.stream().filter(x -> x.getId() > 10 &&
+                x.getName().substring(0,1).equals("An")).forEach(System.out :: println);
     }
 }
