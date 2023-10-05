@@ -1,16 +1,18 @@
 package all_homework.homework_11.task_1;
 
 public class AnalysisExeption {
-    public static boolean threeParametrs(String login, String password, String confimPassword) {
+    public static boolean threeParametrs(String login, String password, String confimPassword) throws WrongPasswordException, WrongLoginException {
         boolean result = true;
 
         if (login.length() > 20 || login.indexOf(" ") != -1) {
-            new WrongLoginException("Login не соответствует заданному условию!");
             result = false;
+            throw new WrongLoginException("Login не соответствует заданному условию!");
+
         }
         if(password.length() > 20 || password.indexOf(" ") == -1 || password.equals(confimPassword) || checkNumberInTheString(password)){
-            new WrongPasswordException("Password не соответствует заданному условию!");
             result = false;
+            throw new WrongPasswordException("Password не соответствует заданному условию!");
+
         }
         return result;
     }
