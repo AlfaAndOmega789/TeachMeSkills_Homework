@@ -16,7 +16,7 @@ public class Main {
             String line = reader.readLine();
             while (line != null) {
 
-                String[] array = line.split(" ");
+                String[] array = line.split("\\s+|_|,|\\.|!|-|=|\n");
 
                 int maxLength = Integer.MIN_VALUE;
                 int numberWorld = Integer.MIN_VALUE;
