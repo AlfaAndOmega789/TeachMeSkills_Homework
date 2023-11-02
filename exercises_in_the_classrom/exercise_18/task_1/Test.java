@@ -32,11 +32,11 @@ public class Test {
 
             if(element.getNodeType() != Node.TEXT_NODE){
                 NodeList elementProp = element.getChildNodes();
-
-                for(int j = 0; j < elementProp.getLength(); j++){
-                    Node newElementProp = elementProp.item(i);
-                    System.out.println(newElementProp.getTextContent());
-                }
+                System.out.println(elementProp.item(i).getTextContent());
+//                for(int j = 0; j < elementProp.getLength(); j++){
+//                    Node newElementProp = elementProp.item(i);
+//                    System.out.println(newElementProp.getTextContent());
+//                }
             }
 
 
