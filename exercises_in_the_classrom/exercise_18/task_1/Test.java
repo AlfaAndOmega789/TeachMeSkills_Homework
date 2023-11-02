@@ -16,26 +16,47 @@ import java.util.List;
 
 public class Test {
     public static void main(String[] args) throws ParserConfigurationException, IOException, SAXException {
-        File file = new File("someFile.xml");
+        File file = new File("C:\\projects\\TeachMeSkills_Homework\\exercises_in_the_classrom\\exercise_18\\task_1\\someFile.xml");
 
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder builder = factory.newDocumentBuilder();
-        Document document = builder.parse(file);
+        DocumentBuilder builder = factory.newDocumentBuilder(); //создаем наш парсер
+        Document document = builder.parse(file); // работаем с файлом, передаем его
 
-        Element authorsElement = (Element) document.getElementsByTagName("author");
+//        NodeList sonetElement = document.getElementsByTagName("sonet"); // достаем элемент, приведение нужно, потому что возвращает Node
 
-        NodeList authorNodeList = document.getElementsByTagName("author");
+        Node root = document.getDocumentElement();
+        NodeList nodeList = root.getChildNodes();
 
-        List<Author> authorList = new ArrayList<>();
+        for(int i = 0;  i < nodeList.getLength(); i++){
+            Node element  = nodeList.item(i);
 
-        for(int i = 0; i < authorNodeList.getLength(); i++){
-            if(authorNodeList.item(i).getNodeType() == Node.ELEMENT_NODE){
-                Element authorElement = (Element) authorNodeList.item(i);
+            if(element.getNodeType() != Node.TEXT_NODE){
+                NodeList elementProp = element.getChildNodes();
 
-                Author author = new Author();
-//                author.setLastName(lastName);
+                for(int j = 0; j < elementProp.getLength(); j++){
+                    Node newElementProp = elementProp.item(i);
+                    System.out.println(newElementProp.getTextContent());
+                }
             }
+
+
         }
+
+//        String type = sonetElement.item(0).getAttributes().getNamedItem("type").getTextContent(); // здесь лежит Shakespearean
+//        System.out.println(type);
+//
+//        NodeList authorNodeList = document.getElementsByTagName("author");
+
+//        List<Author> authorList = new ArrayList<>();
+//
+//        for(int i = 0; i < authorNodeList.getLength(); i++){
+//            if(authorNodeList.item(i).getNodeType() == Node.ELEMENT_NODE){
+//                Element authorElement = (Element) authorNodeList.item(i);
+//
+//                Author author = new Author();
+//
+//            }
+//        }
     }
 }
 class Author{
