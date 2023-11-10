@@ -17,14 +17,18 @@ public class MainSorted {
         for(int i = 0; i < array.length;i++){
             array[i] = random.nextInt(10 + 1);
         }
+        System.out.println("Generate array - " + Arrays.toString(array));
 
         InsertSorted insertSorted = new InsertSorted(array);
         ChoiceSorted choiceSorted = new ChoiceSorted(array);
         BubbleSorted bubbleSorted = new BubbleSorted(array);
 
-        Thread insertSortedThread = new Thread(insertSorted);
         Thread choiceSortedThread = new Thread(choiceSorted);
         Thread bubbleSortedThread = new Thread(bubbleSorted);
+        Thread insertSortedThread = new Thread(insertSorted);
+
+
+
 
 
         insertSortedThread.start();
@@ -32,6 +36,8 @@ public class MainSorted {
         bubbleSortedThread.start();
 
         System.out.println("Поток main завершает свою работу");
+
+        reader.close();
     }
 }
 
@@ -46,19 +52,19 @@ class InsertSorted implements Runnable{
         System.out.println("InsertSorted - " + Arrays.toString(sorted(array)));
     }
     public static int[] sorted(int[] array){
-//        for(int i = 1; i < array.length;i++){
-//            int someValue = array[i];
-//            int j = i;
-//
-//            while(j > 0 && array[j - 1] > someValue){
-//                array[j] = array[j - 1];
-//                j--;
-//            }
-//            array[j] = someValue;
-//        }
+        synchronized (array) {
+            for (int i = 1; i < array.length; i++) {
+                int someValue = array[i];
+                int j = i;
 
-        return array;
-    }
+                while (j > 0 && array[j - 1] > someValue) {
+                    array[j] = array[j - 1];
+                    j--;
+                }
+                array[j] = someValue;
+            }
+        }
+        return array;}
 }
 
 class ChoiceSorted implements Runnable{
@@ -88,7 +94,20 @@ class BubbleSorted implements Runnable{
     }
 
     public static int[] sorted(int[] array){
-        return  array;
+        synchronized (array) {
+            int someValue = 0;
+
+            for (int i = 0; i < array.length; i++) {
+                for (int j = 0; j < array.length; j++) {
+                    if (array[i] < array[j]) {
+                        someValue = array[i];
+                        array[i] = array[j];
+                        array[j] = someValue;
+                    }
+                }
+            }
+
+        return  array;}
     }
 }
 
