@@ -7,7 +7,6 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class MainSorted {
-
     public static void main(String[] args) throws IOException {
         System.out.println("Поток main начинает свою работу");
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -19,17 +18,13 @@ public class MainSorted {
         }
         System.out.println("Generate array - " + Arrays.toString(array));
 
-        InsertSorted insertSorted = new InsertSorted(array);
-        ChoiceSorted choiceSorted = new ChoiceSorted(array);
-        BubbleSorted bubbleSorted = new BubbleSorted(array);
+        InsertSorted insertSorted = new InsertSorted(array.clone());
+        ChoiceSorted choiceSorted = new ChoiceSorted(array.clone());
+        BubbleSorted bubbleSorted = new BubbleSorted(array.clone());
 
         Thread choiceSortedThread = new Thread(choiceSorted);
         Thread bubbleSortedThread = new Thread(bubbleSorted);
         Thread insertSortedThread = new Thread(insertSorted);
-
-
-
-
 
         insertSortedThread.start();
         choiceSortedThread.start();
@@ -51,20 +46,21 @@ class InsertSorted implements Runnable{
 
         System.out.println("InsertSorted - " + Arrays.toString(sorted(array)));
     }
-    public static int[] sorted(int[] array){
-        synchronized (array) {
-            for (int i = 1; i < array.length; i++) {
-                int someValue = array[i];
-                int j = i;
+    public static int[] sorted(int[] array) {
 
-                while (j > 0 && array[j - 1] > someValue) {
-                    array[j] = array[j - 1];
-                    j--;
-                }
-                array[j] = someValue;
+        for (int i = 1; i < array.length; i++) {
+            int someValue = array[i];
+            int j = i;
+
+            while (j > 0 && array[j - 1] > someValue) {
+                array[j] = array[j - 1];
+                j--;
             }
+            array[j] = someValue;
         }
-        return array;}
+
+        return array;
+    }
 }
 
 class ChoiceSorted implements Runnable{
@@ -94,7 +90,6 @@ class BubbleSorted implements Runnable{
     }
 
     public static int[] sorted(int[] array){
-        synchronized (array) {
             int someValue = 0;
 
             for (int i = 0; i < array.length; i++) {
@@ -107,7 +102,7 @@ class BubbleSorted implements Runnable{
                 }
             }
 
-        return  array;}
+        return  array;
     }
 }
 
