@@ -3,6 +3,8 @@ package all_homework.homework_19.task_2;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.Random;
 
 public class MainSorted {
 
@@ -10,9 +12,10 @@ public class MainSorted {
         System.out.println("Поток main начинает свою работу");
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         int[] array = new int[Integer.parseInt(reader.readLine())];
+        Random random = new Random();
 
         for(int i = 0; i < array.length;i++){
-
+            array[i] = random.nextInt(10 + 1);
         }
 
         InsertSorted insertSorted = new InsertSorted(array);
@@ -27,9 +30,7 @@ public class MainSorted {
         choiceSortedThread.start();
         bubbleSortedThread.start();
 
-//        System.out.println(insertSorted.sorted(array));
-//        System.out.println(choiceSorted.sorted(array));
-//        System.out.println(bubbleSorted.sorted(array));
+
 
         System.out.println("Поток main завершает свою работу");
     }
@@ -42,10 +43,14 @@ class InsertSorted implements Runnable{
     }
     @Override
     public void run() {
-        sorted(array);
+//        array = sorted(array);
+//        for(int i = 0; i < array.length;i++){
+//            System.out.println(array[i]);
+//        }
+        System.out.println("InsertSorted - " +Arrays.toString(sorted(array)));
     }
     public int[] sorted(int[] array){
-        return null;
+        return array;
     }
 }
 
@@ -57,10 +62,10 @@ class ChoiceSorted implements Runnable{
     }
     @Override
     public void run() {
-        sorted(array);
+        System.out.println("ChoiceSorted - " + Arrays.toString(sorted(array)));
     }
     public int[] sorted(int[] array){
-        return  null;
+        return  array;
     }
 }
 class BubbleSorted implements Runnable{
@@ -70,11 +75,13 @@ class BubbleSorted implements Runnable{
     }
     @Override
     public void run() {
-        sorted(array);
+
+        System.out.println("BubbleSorted - " + Arrays.toString(sorted(array)));
+
     }
 
     public int[] sorted(int[] array){
-        return  null;
+        return  array;
     }
 }
 
