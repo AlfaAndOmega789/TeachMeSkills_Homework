@@ -26,11 +26,10 @@ public class MainSorted {
         Thread choiceSortedThread = new Thread(choiceSorted);
         Thread bubbleSortedThread = new Thread(bubbleSorted);
 
+
         insertSortedThread.start();
         choiceSortedThread.start();
         bubbleSortedThread.start();
-
-
 
         System.out.println("Поток main завершает свою работу");
     }
@@ -43,13 +42,21 @@ class InsertSorted implements Runnable{
     }
     @Override
     public void run() {
-//        array = sorted(array);
-//        for(int i = 0; i < array.length;i++){
-//            System.out.println(array[i]);
-//        }
-        System.out.println("InsertSorted - " +Arrays.toString(sorted(array)));
+
+        System.out.println("InsertSorted - " + Arrays.toString(sorted(array)));
     }
-    public int[] sorted(int[] array){
+    public static int[] sorted(int[] array){
+//        for(int i = 1; i < array.length;i++){
+//            int someValue = array[i];
+//            int j = i;
+//
+//            while(j > 0 && array[j - 1] > someValue){
+//                array[j] = array[j - 1];
+//                j--;
+//            }
+//            array[j] = someValue;
+//        }
+
         return array;
     }
 }
@@ -64,7 +71,7 @@ class ChoiceSorted implements Runnable{
     public void run() {
         System.out.println("ChoiceSorted - " + Arrays.toString(sorted(array)));
     }
-    public int[] sorted(int[] array){
+    public static int[] sorted(int[] array){
         return  array;
     }
 }
@@ -80,7 +87,7 @@ class BubbleSorted implements Runnable{
 
     }
 
-    public int[] sorted(int[] array){
+    public static int[] sorted(int[] array){
         return  array;
     }
 }
