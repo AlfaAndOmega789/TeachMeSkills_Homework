@@ -1,8 +1,8 @@
-package exercises_in_the_classrom.exercise_18.task_4;
+package all_homework.homework_19.task_2;
 
 import java.util.Arrays;
 
-public class Test {
+public class TestBubble {
     public static void main(String[] args) {
         int[]array = new int[10];
         int count = 0;

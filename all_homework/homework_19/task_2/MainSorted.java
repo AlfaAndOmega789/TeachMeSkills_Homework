@@ -74,7 +74,26 @@ class ChoiceSorted implements Runnable{
         System.out.println("ChoiceSorted - " + Arrays.toString(sorted(array)));
     }
     public static int[] sorted(int[] array){
+        for(int step =0; step < array.length;step++){
+            int index = min(array, step);
+
+            int someValue = array[step];
+            array[step] = array[index];
+            array[index]  = someValue;
+        }
         return  array;
+    }
+    public static int min(int[] array, int start){
+        int minValue = start;
+        int minIndex = array[start];
+        for(int i = start + 1; i < array.length;i++){
+            if(minValue > array[i]){
+                minValue = array[i];
+                minIndex = i;
+            }
+        }
+
+        return minIndex;
     }
 }
 class BubbleSorted implements Runnable{
