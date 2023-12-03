@@ -16,7 +16,7 @@ public class AgeServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in) );
 
         resp.setContentType("text/html");
         try(PrintWriter writer = resp.getWriter()){

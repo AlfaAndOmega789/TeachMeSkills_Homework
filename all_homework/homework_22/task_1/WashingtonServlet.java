@@ -12,7 +12,7 @@ import java.io.PrintWriter;
 import java.util.Date;
 import java.util.TimeZone;
 
-@WebServlet("/minsk")
+@WebServlet("/washington")
 public class WashingtonServlet extends HttpServlet {
 
     @Override
