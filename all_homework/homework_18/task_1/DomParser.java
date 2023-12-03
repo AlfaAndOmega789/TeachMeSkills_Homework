@@ -47,7 +47,7 @@ public class DomParser {
                 break;
                 case "title": {
                     mainTitle = sonnetChilds.item(i).getTextContent();
-                    System.out.println("title " + mainTitle);
+//                    System.out.println("title " + mainTitle);
                 }
                 break;
                 case "lines":{
@@ -74,12 +74,12 @@ public class DomParser {
             switch (authorChilds.item(i).getNodeName()){
                 case "lastName":{
                     lastName = authorChilds.item(i).getTextContent();
-                    System.out.println(lastName);
+//                    System.out.println(lastName);
                 }
                 break;
                 case "firstName":{
                     firstName = authorChilds.item(i).getTextContent();
-                    System.out.println(firstName);
+//                    System.out.println(firstName);
                 }
                 break;
             }
@@ -128,7 +128,7 @@ public class DomParser {
     }
 
     private static Document buildDocument() throws Exception{
-        File file = new File("C:\\Projects\\TeachMeSkills_Homework\\exercises_in_the_classrom\\exercise_18\\task_1\\someFile.xml");
+        File file = new File("C:\\Users\\ivank\\IdeaProjects\\TeachMeSkills_Homework\\all_homework\\homework_18\\task_1\\someFile.xml");
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         return factory.newDocumentBuilder().parse(file);
     }
