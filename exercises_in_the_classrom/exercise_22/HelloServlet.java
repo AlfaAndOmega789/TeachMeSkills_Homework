@@ -1,4 +1,4 @@
-package org.example;
+package exercises_in_the_classrom.exercise_22;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
