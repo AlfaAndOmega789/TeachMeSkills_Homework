@@ -16,14 +16,20 @@ public class AgeServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in) );
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String age = req.getParameter("age");
 
-        resp.setContentType("text/html");
-        try(PrintWriter writer = resp.getWriter()){
-            writer.write("<h2>" + Integer.parseInt(reader.readLine()) + "</h2>");
-            String id = req.getParameter("id");
-            System.out.println("1");
-            System.out.println(id);
+        if(age != null && !age.isEmpty()){
+            try {
+                int age1 = Integer.parseInt(age);
+                boolean isAdult;
+                isAdult = age1 >= 18;
+
+                String result = isAdult ? "Совершеннолетний" : "Несовершеннолетний";
+                response.getWriter().write(result);
+            } catch (NumberFormatException e) {
+                response.getWriter().write("Ошибка в формате возраста");
+            }
         }
     }
 }
