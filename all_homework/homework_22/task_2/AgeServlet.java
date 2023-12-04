@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 
-@WebServlet("/checkAge") //http://localhost:8082/checkAge?age=20
+@WebServlet("/checkAge") //http://localhost:8083/checkAge?age=20
 public class AgeServlet extends HttpServlet {
 
     @Override
@@ -25,9 +25,9 @@ public class AgeServlet extends HttpServlet {
                 isAdult = age1 >= 18;
 
                 String result = isAdult ? "Совершеннолетний" : "Несовершеннолетний";
-                response.getWriter().write(result);
+                resp.getWriter().write(result);
             } catch (NumberFormatException e) {
-                response.getWriter().write("Ошибка в формате возраста");
+                resp.getWriter().write("Ошибка в формате возраста");
             }
         }
     }
