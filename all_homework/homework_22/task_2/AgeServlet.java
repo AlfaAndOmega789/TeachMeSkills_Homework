@@ -6,10 +6,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
 
 @WebServlet("/checkAge") //http://localhost:8083/checkAge?age=20
 public class AgeServlet extends HttpServlet {
@@ -24,7 +21,7 @@ public class AgeServlet extends HttpServlet {
                 boolean isAdult;
                 isAdult = age1 >= 18;
 
-                String result = isAdult ? "Совершеннолетний" : "Несовершеннолетний";
+                String result = isAdult ? "Ok" : "No";
                 resp.getWriter().write(result);
             } catch (NumberFormatException e) {
                 resp.getWriter().write("Ошибка в формате возраста");
