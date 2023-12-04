@@ -16,7 +16,6 @@ public class AgeServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String age = req.getParameter("age");
 
         if(age != null && !age.isEmpty()){
