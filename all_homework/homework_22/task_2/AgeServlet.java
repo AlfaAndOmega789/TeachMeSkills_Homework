@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 
-@WebServlet("/age")
+@WebServlet("/checkAge") //http://localhost:8082/checkAge?age=20
 public class AgeServlet extends HttpServlet {
 
     @Override
