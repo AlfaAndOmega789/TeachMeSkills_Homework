@@ -1,11 +1,13 @@
 package all_homework.homework_23.task_2;
 
 import java.io.*;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.Part;
+
 
 @WebServlet("/load-book")
 public class UploadBookServlet extends HttpServlet {
@@ -13,8 +15,7 @@ public class UploadBookServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // Логика загрузки книги на сервер
-        // Например, сохранение файла на сервере
+
 
         String uploadDirectory = "TeachMeSkills_Homework\\all_homework\\homework_23\\task_2\\"; // Укажите путь для сохранения загруженных книг
         Part filePart = request.getPart("file");
