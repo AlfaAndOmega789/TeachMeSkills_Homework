@@ -16,13 +16,12 @@ public class VerseServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try{
-//            String path = "web/verse.html";
-//            ServletContext servletContext = getServletContext();
-//            RequestDispatcher requestDispatcher = servletContext.getRequestDispatcher(path);
-//            requestDispatcher.forward(req, resp);
+            String path = "/verse.html";
+            ServletContext servletContext = getServletContext();
+            RequestDispatcher requestDispatcher = servletContext.getRequestDispatcher(path);
+            requestDispatcher.forward(req, resp);
 
-            getServletContext().getRequestDispatcher("/verse").forward(req, resp);
-
+//            getServletContext().getRequestDispatcher("/verse").forward(req, resp);
 //            getServletContext().getRequestDispatcher("/verse.html").include(req, resp);
         }catch (ServletException e){
             throw new RuntimeException(e);
