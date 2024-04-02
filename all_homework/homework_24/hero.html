@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iron Man - Супергерой</title>
+    <!-- Подключение Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Дополнительные стили */
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .hero-image {
+            background-image: url('iron man.jpg');
+            background-size: cover;
+            height: 500px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .hero-image h1 {
+            font-size: 3rem;
+        }
+
+        .hero-description {
+            padding: 50px 0;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Железный Человек</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Главная <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">О Железном Человеке</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Способности</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Контакты</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Заголовок с фоновым изображением Железного Человека -->
+<div class="hero-image">
+    <div class="container">
+        <h1>Железный Человек</h1>
+    </div>
+</div>
+
+<!-- Описание Железного Человека -->
+<div class="container hero-description">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Описание</h2>
+            <p>Железный Человек (Iron Man) - это вымышленный супергерой, появляющийся в комиксах издательства Marvel
+                Comics. Он был создан писателем и редактором Стэном Ли, сценаристом Ларри Либером, художником Доном
+                Хеком и художником Джеком Кёрби. Первое появление Железного Человека состоялось в комиксе "Tales of
+                Suspense" №39 в 1963 году.</p>
+        </div>
+        <div class="col-md-6">
+            <h2>История</h2>
+            <p>Тони Старк, миллиардер и гений-изобретатель, стал Железным Человеком после того, как его раненный в ходе
+                похищения во время войны грудной имплантант, который поддерживает его сердце, стал источником его силы и
+                способности летать.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Подвал -->
+<footer class="bg-dark text-white text-center py-4">
+    <p>Автор: Ваше Ivan</p>
+</footer>
+
+<!-- Подключение Bootstrap JS, Popper.js и jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
